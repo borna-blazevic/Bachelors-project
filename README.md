@@ -1,6 +1,6 @@
-The project can be run with:
+The project can be run with after building:
 ```
-qemu-system-arm -machine lm3s811evb -serial stdio -kernel gcc/RTOSDemo.bin -s -S
+qemu-system-arm -machine lm3s6965evb -serial stdio -kernel output/RTOSDemo.bin -s -S
 ```
 
 and can be debbuged with 
