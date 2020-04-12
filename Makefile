@@ -3,8 +3,8 @@ SUBDIRS := bootloader \
 
 all: $(SUBDIRS)
 	@mkdir -p output
-	cp task/gcc/RTOSDemo.bin output/
-	$(info To start run: qemu-system-arm -machine lm3s6965evb -serial stdio -kernel output/RTOSDemo.bin -s -S)
+	srec_cat bootloader/gcc/RTOSDemoBootloader.bin -Binary -offset 0x00000000 -fill 0xff 0x00000000 0x00016000 task/gcc/RTOSDemo.bin -Binary -offset 0x00016000 -o output/combined.bin -Binary
+	@echo "To start run: qemu-system-arm -machine lm3s6965evb -serial stdio -kernel output/combined.bin -s -S"
 	
 $(SUBDIRS):
 	@cd $@ && $(MAKE)
