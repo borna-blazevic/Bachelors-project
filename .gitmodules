@@ -4,3 +4,6 @@
 [submodule "task"]
 	path = task
 	url = git@github.com:borna-blazevic/bachelors-project-task.git
+[submodule "test-env"]
+	path = test-env
+	url = git@github.com:borna-blazevic/bachelors-project-test-env.git
