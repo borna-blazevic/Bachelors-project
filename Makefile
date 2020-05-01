@@ -3,7 +3,7 @@ SUBDIRS := bootloader \
 
 all: $(SUBDIRS)
 	@mkdir -p output
-	srec_cat bootloader/gcc/bootloader.bin -Binary -offset 0x00000000 -fill 0xff 0x00000000 0x00004000 task/gcc/task.bin -Binary -offset 0x00004000 -o output/combined.bin -Binary
+	srec_cat bootloader/gcc/bootloader.bin -Binary -offset 0x00000000 -fill 0xff 0x00000000 0x00008000 task/gcc/task.bin -Binary -offset 0x00008000 -o output/combined.bin -Binary
 	@echo "To start run: qemu-system-arm -machine lm3s6965evb -serial stdio -kernel output/combined.bin -s -S"
 	
 $(SUBDIRS):
