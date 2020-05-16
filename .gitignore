@@ -1,3 +1,4 @@
 output/*
 .vscode/*
 firmware/*
+firmware_legacy/*
